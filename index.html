@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noise Level Meter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Noise Level Meter</h1>
+  </header>
+
+  <main>
+    <section id="instructions">
+      <h2>How to use</h2>
+      <ol>
+        <li>Click <strong>Start</strong> and allow microphone access.</li>
+        <li>Optionally allow notifications when prompted.</li>
+        <li>Make noise - the bar and canvas will respond in real time.</li>
+        <li>Adjust the slider to change the alert threshold.</li>
+        <li>A notification (or on-page alert) fires when volume exceeds the threshold.</li>
+      </ol>
+    </section>
+
+    <section id="controls">
+      <button id="startBtn" type="button">Start</button>
+      <label for="threshold">Alert threshold: <span id="thresholdVal">50</span></label>
+      <input id="threshold" type="range" min="1" max="100" value="50">
+    </section>
+
+    <section id="meter">
+      <p>Volume: <span id="volumeDisplay">0</span></p>
+      <div id="levelBar"><div id="levelFill"></div></div>
+      <canvas id="visualizer" width="600" height="120"></canvas>
+    </section>
+
+    <div id="alert" hidden>
+      <p id="alertMsg"></p>
+    </div>
+
+    <div id="fallback" hidden>
+      <p id="fallbackMsg"></p>
+    </div>
+  </main>
+
+  <footer>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
